@@ -10,14 +10,14 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class UnclusteredBPTreeTest2 {
+public class UnclusteredBPTreeSalaryTest {
 
 	private static final File INDEX_FILE = new File("person.unkl");
-	private UnclusteredBPTree2 bptree;
+	private UnclusteredBPTreeSalary bptree;
 
 	@Before
 	public void setUp() throws Exception {
-		bptree = UnclusteredBPTree2.newTreeBulkLoading(Generator.GENERATED_FILE, INDEX_FILE);
+		bptree = UnclusteredBPTreeSalary.newTreeBulkLoading(Generator.GENERATED_FILE, INDEX_FILE);
 	}
 
 	@After

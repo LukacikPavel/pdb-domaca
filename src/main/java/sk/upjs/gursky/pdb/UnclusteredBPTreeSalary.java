@@ -13,19 +13,19 @@ import java.util.List;
 
 import sk.upjs.gursky.bplustree.BPTree;
 
-public class UnclusteredBPTree2 extends BPTree<SalaryKey, SalaryOffsetEntry> {
+public class UnclusteredBPTreeSalary extends BPTree<SalaryKey, SalaryOffsetEntry> {
 
 	public static final int PAGE_SIZE = 4096;
 
 	private File personsFile;
 
-	private UnclusteredBPTree2(File personFile, File indexFile) {
+	private UnclusteredBPTreeSalary(File personFile, File indexFile) {
 		super(SalaryOffsetEntry.class, indexFile);
 		this.personsFile = personFile;
 	}
 
-	public static UnclusteredBPTree2 newTreeBulkLoading(File personFile, File indexFile) throws IOException {
-		UnclusteredBPTree2 tree = new UnclusteredBPTree2(personFile, indexFile);
+	public static UnclusteredBPTreeSalary newTreeBulkLoading(File personFile, File indexFile) throws IOException {
+		UnclusteredBPTreeSalary tree = new UnclusteredBPTreeSalary(personFile, indexFile);
 		tree.setNodeSize(PAGE_SIZE);
 		RandomAccessFile raf = new RandomAccessFile(personFile, "rw");
 
